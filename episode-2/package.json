@@ -1,0 +1,22 @@
+{
+  "name": "episode-2",
+  "version": "1.0.0",
+  "description": "this is namaste react episode 2 by akshay saini",
+  "keywords": [],
+  "license": "ISC",
+  "author": "Aashish Rana",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
