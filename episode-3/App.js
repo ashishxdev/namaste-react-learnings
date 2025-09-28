@@ -56,12 +56,12 @@ root.render(jsxheading)
 //     <h1 className="head" tabIndex="5">
 //     Namaste React using JSX
 //     </h1>)
-// // Both are same 
-// // const Title = function(){
-// //     return (<h1 className="head" tabIndex="5">
-// //     Namaste React using JSX
-// //     </h1>)
-// // }
+// Both are same 
+// const Title = function(){
+//     return (<h1 className="head" tabIndex="5">
+//     Namaste React using JSX
+//     </h1>)
+// }
 
 // const HeadingComponent = () => (
 //     <div id="container">
@@ -72,6 +72,9 @@ root.render(jsxheading)
 // )
 
 // root.render(<HeadingComponent/>)
+
+
+
 
 // How to put react element to our component
 // const elem = <span>React Element</span>
