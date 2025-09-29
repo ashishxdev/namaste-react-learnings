@@ -33,7 +33,7 @@ root.render(jsxheading)
 
 // React Functional Component is just a normal javascript function which returns some piece of jsx
 
-// All are same
+// All are same - Always component name should start with a capital letter
 // const HeadingComponent = () => {
 //     return <h1 className="heading">Namaste React Functional Component</h1>
 // }
@@ -100,6 +100,7 @@ root.render(jsxheading)
 // root.render(<HeadingComponent/>)
 
 
+// how to render a component inside a react element
 // const elem = <span>React Element</span>
 
 // const HeadingComponent = () => (
