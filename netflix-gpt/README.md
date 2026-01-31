@@ -4,7 +4,9 @@
 - Configured Tailwind CSS
 - Header
 - Login Form
-- Sign Up Form
+- Sign Up Form 
+    - (If we have big form in project like we have 50-60 fields always use library like Formik)
+
 
 # Features
 - Login/Signup

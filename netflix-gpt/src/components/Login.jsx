@@ -1,21 +1,54 @@
-import React from 'react'
-import Header from './Header'
+import React, { useState } from "react";
+import Header from "./Header";
 
 const Login = () => {
+  const [isSignInForm, setSignInForm] = useState(true);
+
+  const toggleSignInForm = () => {
+    setSignInForm(!isSignInForm);
+  };
+
   return (
     <div>
-      <Header/>
-      <div className='absolute'>
-        <img src='https://assets.nflxext.com/ffe/siteui/vlv3/3d31dac6-aaf0-4e6e-8bd7-e16c5d9cd9a3/web/IN-en-20260119-TRIFECTA-perspective_cce70d60-69c5-428f-99cf-44c212fcec3f_large.jpg' alt="bg"/>
+      <Header />
+      <div className="absolute">
+        <img
+          src="https://assets.nflxext.com/ffe/siteui/vlv3/3d31dac6-aaf0-4e6e-8bd7-e16c5d9cd9a3/web/IN-en-20260119-TRIFECTA-perspective_cce70d60-69c5-428f-99cf-44c212fcec3f_large.jpg"
+          alt="bg"
+        />
       </div>
-      <form className='w-3/12 my-36 mx-auto right-0 left-0 absolute p-12 bg-black text-white bg-opacity-80 rounded-lg'>
-        <h1 className='font-bold text-3xl'>Sign In</h1>
-        <input type='text' placeholder='Email Address' className='p-4 my-4 w-full bg-[#393939] rounded-lg'/>
-        <input type='password' placeholder='Password' className='p-4 my-4 w-full bg-[#393939] rounded-lg'/>
-        <button className='p-4 my-6 w-full bg-red-700'>Sign In</button>
+      <form className="w-3/12 my-36 mx-auto right-0 left-0 absolute p-12 bg-black text-white bg-opacity-80 rounded-lg">
+        <h1 className="font-bold text-3xl">
+          {isSignInForm ? "Sign In" : "Sign up"}
+        </h1>
+        {!isSignInForm && (
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="p-4 my-4 w-full bg-[#393939] rounded-lg"
+          />
+        )}
+        <input
+          type="text"
+          placeholder="Email Address"
+          className="p-4 my-4 w-full bg-[#393939] rounded-lg"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="p-4 my-4 w-full bg-[#393939] rounded-lg"
+        />
+        <button className="p-4 my-6 w-full bg-red-700 rounded-lg">
+          Sign In
+        </button>
+        <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
+          {isSignInForm
+            ? "New to Netflix? Sign Up Now"
+            : "Already registered? Sign In Now"}
+        </p>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
