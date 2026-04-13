@@ -9,39 +9,38 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 
 const AppLayout = () => {
-        return (
-            <div className="app">
-                <Header />
-                <Outlet/>
-            </div>
-        )
-    }
+    return (
+        <div className="app">
+            <Header />
+            <Outlet />
+        </div>
+    )
+}
 const appRouter = createBrowserRouter([
     {
         path: "/",
-        children:[
-        {
-        path: "/",
-        element: <Body/>
-        },
-        {
-        path: "/about",
-        element: <About/>
-        },
-        {
-        path: "/contact",
-        element: <Contact/>
-        },
-        {
-        path: "/restaurants/:resId", // here resId is dynamic it changes according to the id of the restaurant
-        element: <RestaurantMenu/>
-        },
+        children: [
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/about",
+                element: <About />
+            },
+            {
+                path: "/contact",
+                element: <Contact />
+            },
+            {
+                path: "/restaurants/:resId", // here resId is dynamic it changes according to the id of the restaurant
+                element: <RestaurantMenu />
+            },
         ],
-        element: <AppLayout/>,
-        errorElement: <Error/>
+        element: <AppLayout />,
+        errorElement: <Error />
     },
 ])
-
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
 root.render(<RouterProvider router={appRouter} />)

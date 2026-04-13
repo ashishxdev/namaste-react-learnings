@@ -5,17 +5,17 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
 
-    const[btnNameReact, setbtnNameReact] = useState("Login")
+    const [btnNameReact, setbtnNameReact] = useState("Login")
 
     const onlinestatus = useOnlineStatus();
 
-    useEffect(()=>{
+    useEffect(() => {
     }, [btnNameReact]);
 
     return (
         <div className="header">
             <div className="logo-container">
-                <img className="logo" src={LOGO_URL}/>
+                <img className="logo" src={LOGO_URL} />
             </div>
             <div className="nav-items">
                 <ul>
@@ -25,11 +25,11 @@ const Header = () => {
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li><Link to="/grocery">Grocery</Link></li>
                     <li>Cart</li>
-                    <button className="login" onClick={()=>{
+                    <button className="login" onClick={() => {
                         btnNameReact == "Login"
-                        ? setbtnNameReact("Logout") 
-                        : setbtnNameReact("Login") 
-                        }}>{btnNameReact}</button>
+                            ? setbtnNameReact("Logout")
+                            : setbtnNameReact("Login")
+                    }}>{btnNameReact}</button>
                 </ul>
             </div>
         </div>

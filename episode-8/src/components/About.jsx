@@ -31,22 +31,22 @@ import UserClass from './UserClass'
 // }
 
 // Class Based Component
-class About extends React.Component{
-  constructor(props){
+class About extends React.Component {
+  constructor(props) {
     super(props);
   }
 
-  componentDidMount(){
+  componentDidMount() {
   }
 
-  render(){
+  render() {
     return (
-    <div>
-      <h1>About</h1>
-      <h2>This is Namaste React Episode 7</h2>
-      <UserClass name={"Aashish Rana (class)"} location={"Tehri Garhwal (class)"}/>
-    </div>
-  )
+      <div>
+        <h1>About</h1>
+        <h2>This is Namaste React Episode 7</h2>
+        <UserClass name={"Aashish Rana (class)"} location={"Tehri Garhwal (class)"} />
+      </div>
+    )
   }
 }
 

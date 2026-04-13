@@ -10,15 +10,15 @@ import WatchPage from './components/WatchPage'
 
 const appRouter = createBrowserRouter([{
   path: "/",
-  element: <Body/>,
+  element: <Body />,
   children: [
     {
       path: "/",
-      element: <MainContainer/>
+      element: <MainContainer />
     },
     {
       path: "watch",
-      element: <WatchPage/>
+      element: <WatchPage />
     }
   ]
 }])
@@ -26,12 +26,12 @@ const appRouter = createBrowserRouter([{
 function App() {
   return (
     <>
-    <Provider store={store}>
-      <div>
-        <Head/>
-        <RouterProvider router={appRouter}/>
-       </div>
-    </Provider>
+      <Provider store={store}>
+        <div>
+          <Head />
+          <RouterProvider router={appRouter} />
+        </div>
+      </Provider>
     </>
   )
 }

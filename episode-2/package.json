@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "parcel": "^2.16.0"
+    "parcel": "^2.16.4"
   },
   "dependencies": {
     "react": "^19.1.1",

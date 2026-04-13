@@ -6,11 +6,11 @@ const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen)
 
   // Early Return pattern
-  if(!isMenuOpen) return null;
+  if (!isMenuOpen) return null;
   return (
     <div className='p-5 shadow-lg w-48'>
       <ul>
-        <li> 
+        <li>
           <Link to="/">Home</Link>
         </li>
         <li>Shorts</li>

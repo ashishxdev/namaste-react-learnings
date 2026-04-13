@@ -15,7 +15,7 @@ import ReactDOM from "react-dom/client"
 const jsxheading = (<h1 id="heading" tabIndex="5">
     <p>Hello</p>
     This is a h1 tag using JSX
-    </h1>)
+</h1>)
 
 // const jsxheading = <h1 className="head" tabIndex="1">This is a h1 tag using JSX</h1>
 console.log(jsxheading)
@@ -141,18 +141,18 @@ root.render(jsxheading)
 // 2. 
 const Title = () => (
     <h1 className="head" tabIndex="5">
-    Namaste React using JSX
+        Namaste React using JSX
     </h1>
-    )
+)
 
 const HeadingComponent = () => (
     <div id="container">
         {/* these 3 things are same */}
         {Title()}
-        <Title/>
+        <Title />
         <Title></Title>
         <h1 className="heading">Namaste React Functional Component</h1>
     </div>
 )
 
-root.render(<HeadingComponent/>)
+root.render(<HeadingComponent />)

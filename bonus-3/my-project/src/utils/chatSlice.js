@@ -7,8 +7,8 @@ const chatSlice = createSlice({
         messages: []
     },
     reducers: {
-        addMessage: (state, action) =>{
-            state.messages.splice(LIVECHATCOUNT,1)
+        addMessage: (state, action) => {
+            state.messages.splice(LIVECHATCOUNT, 1)
             state.messages.push(action.payload)
             // state.messages.unshift(action.payload)
         }

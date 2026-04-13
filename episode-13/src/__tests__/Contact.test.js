@@ -1,68 +1,104 @@
+// import { render, screen } from "@testing-library/react"
+// import Contact from "../components/Contact"
+// import "@testing-library/jest-dom"
+
+// test("should load contact us component", () => {
+//     render(<Contact />)
+
+//     const heading = screen.getByRole("heading")
+
+//     expect(heading).toBeInTheDocument()
+// })
+
+// import { render, screen } from "@testing-library/react"
+// import Contact from "../components/Contact"
+// import "@testing-library/jest-dom"
+
+// test("should load button", () => {
+//     render(<Contact />)
+
+// const button = screen.getByRole("button")
+// const button = screen.getByText("Submit")
+// const button = screen.getByText("Randomop") // failed
+//     expect(button).toBeInTheDocument()
+// })
+
+// import { render, screen } from "@testing-library/react"
+// import Contact from "../components/Contact"
+// import "@testing-library/jest-dom"
+
+// test("should load button", () => {
+//     render(<Contact />)
+
+//     const button = screen.getByPlaceholderText("Name") 
+//     expect(button).toBeInTheDocument()
+// })
+
 import { render, screen } from "@testing-library/react"
 import Contact from "../components/Contact"
 import "@testing-library/jest-dom"
 
-describe("Contact us Page Test Cases",()=>{
+describe("Contact us Page Test Cases", () => {
 
-    // beforeAll(()=>{
+    // beforeAll(() => {
     //     console.log("Before All")
     // })
 
-    // beforeEach(()=>{
+    // beforeEach(() => {
     //     console.log("Before Each")
     // })
 
-    // afterAll(()=>{
+    // afterAll(() => {
     //     console.log("After All")
     // })
 
-    // afterEach(()=>{
+    // afterEach(() => {
     //     console.log("After Each")
     // })
 
-    it("Should load contact us component", ()=>{
+    // it("Should load contact us component", () => {
 
-    render(<Contact/>)
+    //     render(<Contact />)
 
-    const heading = screen.getByRole("heading")
+    //     const heading = screen.getByRole("heading")
 
-    // Assertion
-    expect(heading).toBeInTheDocument();
-    })
+    //     Assertion
+    //     expect(heading).toBeInTheDocument();
+    // })
 
-    test("Should load button inside contact component", ()=>{
+    // test("Should load button inside contact component", () => {
 
-    render(<Contact/>)
+    //     render(<Contact />)
 
-    // const button = screen.getByRole("button")
-    const button = screen.getByText("Submit")
+    //     // const button = screen.getByRole("button")
+    //     const button = screen.getByText("Submit")
 
-    // Assertion
-    expect(button).toBeInTheDocument();
-    })
+    //     Assertion
+    //     expect(button).toBeInTheDocument();
+    // })
 
-    it("Should load input name inside contact component", ()=>{
+    // it("Should load input name inside contact component", () => {
 
-    render(<Contact/>)
+    //     render(<Contact />)
 
-    const inputName = screen.getByPlaceholderText("Name")
+    //     const inputName = screen.getByPlaceholderText("Name")
 
-    // Assertion
-    expect(inputName).toBeInTheDocument();
-    })
+    //     Assertion
+    //     expect(inputName).toBeInTheDocument();
+    // })
 
-    test("Should load 2 input boxes on the contact component", ()=>{
+    test("Should load 2 input boxes on the contact component", () => {
 
-    render(<Contact/>)
+        render(<Contact />)
 
-    // Querying
-    const inputBoxes = screen.getAllByRole("textbox")
+        // Querying
+        const inputBoxes = screen.getAllByRole("textbox")
 
-    console.log(inputBoxes.length) // returns jsx element
+        console.log(inputBoxes.length) // returns jsx element
 
-    // Assertion
-    // expect(inputBoxes.length).toBe(2);
-    expect(inputBoxes.length).not.toBe(3);
+        // Assertion
+        expect(inputBoxes.length).toBe(2);
+        expect(inputBoxes.length).not.toBe(3);
     })
 
 })

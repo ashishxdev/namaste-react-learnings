@@ -9,21 +9,21 @@ import Cart from "../components/Cart"
 import { BrowserRouter } from "react-router-dom"
 import "@testing-library/jest-dom" // For toBeInTheDocument
 
-it("Should load Restaurant Menu component", async()=>{
+it("Should load Restaurant Menu component", async () => {
 
-    global.fetch = jest.fn(() => 
+    global.fetch = jest.fn(() =>
         Promise.resolve({
             json: () => Promise.resolve(MOCK_DATA)
-            })
+        })
     )
 
-    await act( async () => render(
+    await act(async () => render(
         <BrowserRouter>
-        <Provider store={appStore}>
-            <Header/>
-            <RestaurantMenu/>
-            <Cart/>
-        </Provider>
+            <Provider store={appStore}>
+                <Header />
+                <RestaurantMenu />
+                <Cart />
+            </Provider>
         </BrowserRouter>
     ))
 
@@ -34,17 +34,17 @@ it("Should load Restaurant Menu component", async()=>{
 
     expect(screen.getByText("(0) Cart 🛒")).toBeInTheDocument()
 
-    const addBtns = screen.getAllByRole("button", { name: "Add +"})
+    const addBtns = screen.getAllByRole("button", { name: "Add +" })
     // console.log(addBtns)
     fireEvent.click(addBtns[0])
 
     // Header
     expect(screen.getByText("(1) Cart 🛒")).toBeInTheDocument()
-    
+
     fireEvent.click(addBtns[1])
     expect(screen.getByText("(2) Cart 🛒")).toBeInTheDocument()
 
-    expect(screen.getAllByTestId("foodItems").length).toBe(7) // 5 + 2
+    expect(screen.getAllByTestId("foodItems").length).toBe(7) // 5 from resto menu + 2 from cart
 
     fireEvent.click(screen.getByRole("button", { name: "Clear Cart" }))
 

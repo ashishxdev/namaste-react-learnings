@@ -4,7 +4,7 @@
 //     "Hello World from React!") // children and props too
 
 // console.log(heading) // give heading as an object
-        
+
 // const root = ReactDOM.createRoot(document.getElementById("root"))
 
 // root.render(heading) // heading is a react element which is a js object
@@ -28,14 +28,14 @@
 
 const parent = React.createElement(
     "div",
-    {id: "parent"},[
-    React.createElement("div",{id: "child"},[
-    React.createElement("h1",{},"I'm H1 Tag"), 
-    React.createElement("h2",{},"I'm H2 Tag")
+    { id: "parent" }, [
+    React.createElement("div", { id: "child" }, [
+        React.createElement("h1", {}, "I'm H1 Tag"),
+        React.createElement("h2", {}, "I'm H2 Tag")
     ]),
-    React.createElement("div",{id: "child2"},[
-    React.createElement("h1",{},"I'm H1 Tag"), 
-    React.createElement("h2",{},"I'm H2 Tag")
+    React.createElement("div", { id: "child2" }, [
+        React.createElement("h1", {}, "I'm H1 Tag"),
+        React.createElement("h2", {}, "I'm H2 Tag")
     ])
 ])
 

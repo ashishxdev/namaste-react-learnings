@@ -6,20 +6,20 @@ import UserContext from "../utils/UserContext";
 
 const Header = () => {
 
-    const[btnNameReact, setbtnNameReact] = useState("Login")
+    const [btnNameReact, setbtnNameReact] = useState("Login")
 
     const onlinestatus = useOnlineStatus();
 
-    const {loggedInUser} = useContext(UserContext)
+    const { loggedInUser } = useContext(UserContext)
 
-    useEffect(()=>{
+    useEffect(() => {
     }, [btnNameReact]);
 
     return (
         // <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-amber-200 lg:bg-cyan-300">
         <div className="flex justify-between items-center px-6 py-3 bg-white shadow-md sticky top-0 z-50">
             <div className="logo-container flex items-center">
-                <img className="w-25" src={LOGO_URL}/>
+                <img className="w-25" src={LOGO_URL} />
             </div>
             <div className="flex items-center">
                 {/* <ul className="flex p-4 m-4"> */}
@@ -32,9 +32,8 @@ const Header = () => {
                     <li className="flex items-center hover:text-orange-500 transition-colors duration-200">
                         Online Status:{" "}
                         <span
-                        className={`ml-2 w-3 h-3 rounded-full ${
-                        onlinestatus ? "bg-green-500" : "bg-red-500"
-                        }`}
+                            className={`ml-2 w-3 h-3 rounded-full ${onlinestatus ? "bg-green-500" : "bg-red-500"
+                                }`}
                         ></span>
                     </li>
 
@@ -43,11 +42,11 @@ const Header = () => {
                     <li className="hover:text-orange-500 transition-colors duration-200"><Link to="/contact">Contact Us</Link></li>
                     <li className="hover:text-orange-500 transition-colors duration-200"><Link to="/grocery">Grocery</Link></li>
                     <li className="hover:text-orange-500 transition-colors duration-200">Cart 🛒</li>
-                    <button className="px-4 py-1 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200" onClick={()=>{
+                    <button className="px-4 py-1 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-200" onClick={() => {
                         btnNameReact == "Login"
-                        ? setbtnNameReact("Logout") 
-                        : setbtnNameReact("Login") 
-                        }}>{btnNameReact}</button>
+                            ? setbtnNameReact("Logout")
+                            : setbtnNameReact("Login")
+                    }}>{btnNameReact}</button>
 
                     <li className="px-2 font-semibold text-gray-600">{loggedInUser}</li>
 

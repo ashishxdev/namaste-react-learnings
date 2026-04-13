@@ -8,16 +8,16 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
 
-const Grocery = lazy(()=>import("./components/Grocery"))
-const About = lazy(()=>import("./components/About"))
+const Grocery = lazy(() => import("./components/Grocery"))
+const About = lazy(() => import("./components/About"))
 
 
 const AppLayout = () => {
 
-    const[userName, setuserName] = useState();
+    const [userName, setuserName] = useState();
 
     // authentication
-    useEffect(()=>{
+    useEffect(() => {
         // Make an API call and send username and password
         const data = {
             name: "Aashish Rana"
@@ -25,52 +25,52 @@ const AppLayout = () => {
         setuserName(data.name);
     }, [])
 
-        return (
-            // Outside Default value
-            // Providing new value
-            <UserContext.Provider value={{loggedInUser: userName, setuserName}}>
-                {/* Here value is Aashish Rana*/}
+    return (
+        // Outside Default value
+        // Providing new value
+        <UserContext.Provider value={{ loggedInUser: userName, setuserName }}>
+            {/* Here value is Aashish Rana*/}
             <div className="app">
-            {/* <UserContext.Provider value={{loggedInUser: "Header Bolte Khopdi kholte"}}> */}
+                {/* <UserContext.Provider value={{loggedInUser: "Header Bolte Khopdi kholte"}}> */}
                 {/* Here value is Header Bolte Khopdi kholte */}
                 <Header />
-            {/* </UserContext.Provider> */}
-                <Outlet/>
+                {/* </UserContext.Provider> */}
+                <Outlet />
             </div>
-            </UserContext.Provider>
-        )
-    }
+        </UserContext.Provider>
+    )
+}
 const appRouter = createBrowserRouter([
     {
         path: "/",
-        children:[
-        {
-        path: "/",
-        element: <Body/>
-        },
-        {
-        path: "/about",
-        element: (<Suspense fallback={<h1>Loading..</h1>}>
-            <About/>
-            </Suspense>)
-        },
-        {
-        path: "/contact",
-        element: <Contact/>
-        },
-        {
-        path: "/grocery",
-        element: (<Suspense fallback={<h1>Loading..</h1>}>
-            <Grocery/>
-            </Suspense>)
-        },
-        {
-        path: "/restaurants/:resId", 
-        element: <RestaurantMenu/>
-        },
+        children: [
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/about",
+                element: (<Suspense fallback={<h1>Loading..</h1>}>
+                    <About />
+                </Suspense>)
+            },
+            {
+                path: "/contact",
+                element: <Contact />
+            },
+            {
+                path: "/grocery",
+                element: (<Suspense fallback={<h1>Loading..</h1>}>
+                    <Grocery />
+                </Suspense>)
+            },
+            {
+                path: "/restaurants/:resId",
+                element: <RestaurantMenu />
+            },
         ],
-        element: <AppLayout/>,
-        errorElement: <Error/>
+        element: <AppLayout />,
+        errorElement: <Error />
     },
 ])
 

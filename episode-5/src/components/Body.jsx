@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
-import { use, useState } from "react"; // named import
+import { useState } from "react"; // named import
 
 const Body = () => {
     // Local State Variable - Super powerful variable
@@ -319,7 +319,7 @@ const Body = () => {
     // ]); // Here listofRestaurants is a super powerful variable, useState has the default values, setlistofRestaurants is the function which will change listofRestaurants variable value
 
     const [listofRestaurants, setlistofRestaurants] = useState(resList); // Here listofRestaurants is a super powerful variable, useState has the default values, setlistofRestaurants is the function which will change listofRestaurants variable value
-    
+
     // Normal JS Variable
     // let listofRestaurants = null; we can write it as const [listofRestaurants] = useState(null);
     // let listofRestaurants = [
@@ -635,12 +635,12 @@ const Body = () => {
     //     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
     // },
     // ]
-        return (
-            <div className="body">
-                <div className="filter">
-                    <button 
+    return (
+        <div className="body">
+            <div className="filter">
+                <button
                     className="filter-btn"
-                    onClick= {() => {
+                    onClick={() => {
                         // console.log("Button Clicked");
                         // Filter logic here
                         const filteredLists = listofRestaurants.filter(
@@ -652,20 +652,20 @@ const Body = () => {
                         // )
                         // console.log(listofRestaurants)
                     }}
-                    >
+                >
                     Top Rated Restaurants
-                    </button>
-                </div>
-                <div className="res-container">
-                    {listofRestaurants.map((restaurant) => (
-                        <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
-                    )) }
-                    {/* {resList.map((restaurant) => (
+                </button>
+            </div>
+            <div className="res-container">
+                {listofRestaurants.map((restaurant) => (
+                    <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+                ))}
+                {/* {resList.map((restaurant) => (
                         <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
                     )) } */}
-                </div>
             </div>
-        )
-    }
+        </div>
+    )
+}
 
 export default Body;

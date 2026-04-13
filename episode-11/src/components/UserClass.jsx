@@ -1,7 +1,7 @@
 import React from 'react'
 
-class UserClass extends React.Component{
-    constructor(props){
+class UserClass extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             userinfo: {
@@ -11,7 +11,7 @@ class UserClass extends React.Component{
         }
     }
 
-    async componentDidMount(){
+    async componentDidMount() {
         // Api call
         const data = await fetch("https://api.github.com/users/ashishxdev")
         const json = await data.json();
@@ -22,25 +22,25 @@ class UserClass extends React.Component{
         })
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         // console.log("Component did Update")
     }
 
     // when i move to another page
-    componentWillUnmount(){
+    componentWillUnmount() {
         // console.log("Component did unmount")
     }
-    
-    render(){
+
+    render() {
         // De-structuring
-        const { name, location, avatar_url} = this.state.userinfo;
+        const { name, location, avatar_url } = this.state.userinfo;
         return (
-        <div className="user-card">
-            <img src={avatar_url} />
-            <h2>Name: {name}</h2>
-            <h3>Location: {location}</h3>
-            <h4>Contact: @ashishrana2004</h4>
-        </div>)
+            <div className="user-card">
+                <img src={avatar_url} />
+                <h2>Name: {name}</h2>
+                <h3>Location: {location}</h3>
+                <h4>Contact: @ashishrana2004</h4>
+            </div>)
     }
 }
 

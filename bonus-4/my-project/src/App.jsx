@@ -12,21 +12,21 @@ import Demo2 from './components/Demo2'
 
 const appRouter = createBrowserRouter([{
   path: "/",
-  element: <Body/>,
+  element: <Body />,
   children: [
     {
       path: "/",
-      element: <MainContainer/>
+      element: <MainContainer />
     },
     {
       path: "watch",
-      element: <WatchPage/>
+      element: <WatchPage />
     },
     {
       path: "demo",
       element: <>
-      <Demo/>
-      <Demo2/>
+        <Demo />
+        <Demo2 />
       </>
     }
   ]
@@ -35,12 +35,12 @@ const appRouter = createBrowserRouter([{
 function App() {
   return (
     <>
-    <Provider store={store}>
-      <div>
-        <Head/>
-        <RouterProvider router={appRouter}/>
-       </div>
-    </Provider>
+      <Provider store={store}>
+        <div>
+          <Head />
+          <RouterProvider router={appRouter} />
+        </div>
+      </Provider>
     </>
   )
 }
